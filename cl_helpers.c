@@ -62,7 +62,7 @@ cl_command_queue CreateCommandQueue(cl_context context, cl_device_id *device) {
   
   //allocate memory for devices buffer
   //devices = new cl_device_id[deviceBufferSize / sizeof(cl_device_id)];
-  devices = (cl_device_id*)malloc(deviceBufferSize);
+  devices = malloc(deviceBufferSize);
   errNum = clGetContextInfo(context, CL_CONTEXT_DEVICES, deviceBufferSize, devices, NULL);
   if(errNum != CL_SUCCESS) {
     printf("failed to get device IDs");
@@ -77,7 +77,7 @@ cl_command_queue CreateCommandQueue(cl_context context, cl_device_id *device) {
   }
   *device = devices[0];
   //delete [] devices;
-  free((void*)devices);
+  free(devices);
   return commandQueue;
 }
 
