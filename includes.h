@@ -11,4 +11,4 @@
 #include <stdlib.h>
 #include <OpenCL/OpenCL.h>
 
-#define ARRAY_SIZE 10
+#define ARRAY_SIZE 100
